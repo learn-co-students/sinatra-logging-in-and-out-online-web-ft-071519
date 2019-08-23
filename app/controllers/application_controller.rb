@@ -14,7 +14,7 @@ class ApplicationController < Sinatra::Base
         # Find user with the same username and password.
         @user = User.find_by(:username => params[:username])
         # needed solutions to add "@user != nil && ". Don't understand why else statement didn't work.  
-        if  @user != nil && @user.password = params[:password]
+        if  @user != nil && @user.password == params[:password]
             session[:user_id] = @user.id
             redirect '/account'
         end
