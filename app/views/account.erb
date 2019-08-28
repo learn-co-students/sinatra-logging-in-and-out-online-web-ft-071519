@@ -8,6 +8,6 @@
   <body id="page-top">
     <h1>Welcome <%= Helpers.current_user(session).username %></h1>
     <h2><%= Helpers.current_user(session).balance %></h2>
-
+    <h2> <a href="/logout">Log Out</a></h2>
   </body>
 </html>
