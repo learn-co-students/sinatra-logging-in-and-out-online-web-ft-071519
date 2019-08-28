@@ -12,9 +12,11 @@ class ApplicationController < Sinatra::Base
 
   post '/login' do
      @user = User.find_by_username(params[:username])
+ 
      if @user 
        session[:user_id] = @user.id
        @user = Helpers.current_user(session)
+    
         redirect '/account'
      end
     redirect '/error'
