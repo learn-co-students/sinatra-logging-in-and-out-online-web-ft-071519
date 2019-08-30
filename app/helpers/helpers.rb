@@ -4,7 +4,6 @@ class Helpers
     end
 
     def self.is_logged_in?(session_hash)
-                # binding.pry
-        self.current_user(session_hash).username == @user.username
+        !!session_hash[:user_id]
     end
 end
